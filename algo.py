@@ -19,18 +19,20 @@ def getOrder(tables, work) :
     vis = {}
     relax = []
     zeroqueue = Queue(maxsize = n+1)
-    for i in range(n) :
-        for j in range(n) :
-            if work[i][j] == 'e' and work[j][i] == "e" :
-                work[i][j] = '-'
-                work[j][i] = '-'
-                # print("embed " + tables[i] + " in " + tables[j] + " simultaneously")
-                relax.append([i, j, 1])
+    # for i in range(n) :
+    #     for j in range(n) :
+    #         if work[i][j] == 'e' and work[j][i] == "e" :
+    #             work[i][j] = '-'
+    #             work[j][i] = '-'
+    #             # print("embed " + tables[i] + " in " + tables[j] + " simultaneously")
+    #             relax.append([i, j, 1])
+
     for i in range(n) :
         for j in range(n) :
             if(work[i][j] == 'e') :
                 indeg[i] = indeg[i] + 1
                 adj[j].append(i)
+
     for t in range(n) :
         if(indeg[t] == 0) :
             zeroqueue.put(t)
@@ -42,8 +44,8 @@ def getOrder(tables, work) :
             if(indeg[t] == 0) :
                 zeroqueue.put(c)
             relax.append([c, t])
-    for pair in relax :
-        print("embed " + tables[pair[1]] + " in " + tables[pair[0]])
+    # for pair in relax :
+    #     print("embed " + tables[pair[1]] + " in " + tables[pair[0]])
     return relax
 
 
@@ -60,7 +62,7 @@ def dfs1(tables,tNo,adj1,work1,currCollec,vis1,curTable):
             work1[tNo[curTable]][tNo[nxtTable]]="e"
 
 
-    
+
 # dfs on adjacency list of Relational Schema
 def dfs2(tables,tNo,adj2,work2,currCollec,vis2,relations,curTable):
     vis2.add(curTable)
@@ -96,7 +98,7 @@ def dfs2(tables,tNo,adj2,work2,currCollec,vis2,relations,curTable):
 
 # function for main algorithm
 def algo(tables,tNo,relations,paths):
-    print(".....Running Algo.....")
+    # print(".....Running Algo.....")
 
     nTables=len(tables)
     currCollec = {"dummy"}
@@ -162,7 +164,7 @@ def algo(tables,tNo,relations,paths):
 
     relax = getOrder(tables, work)
 
-    print("------Algo Ends------")
+    # print("------Algo Ends------")
     return [currCollec,relax, work, adj2]
 
 

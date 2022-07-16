@@ -37,16 +37,6 @@ def getAccessPaths(file_paths) :
     return accessPaths
 
 
-def pre_process(cursor,result,table_schema,table_name):
-  cursor.execute("""set search_path to \'{}\';""".format(table_schema))
-  cursor.execute("SELECT  column_name FROM information_schema.columns WHERE table_name = \'{}\' and (data_type='date' or data_type='numeric' or data_type='Decimal' or data_type='time without time zone')".format(table_name))
-  ans=[]
-  ans=cursor.fetchall()
-
-  for check in result:
-    for col in ans:
-      check[col[0]]=(str)(check[col[0]])
-
 
 # main function
 def main(dbName, schema, mongodb_host, mongodb_dbname, file_paths):
@@ -68,8 +58,8 @@ def main(dbName, schema, mongodb_host, mongodb_dbname, file_paths):
         # # SCHEMA EXTRACTION   
         [tables, tNo, pks,relations] = extractSchema(cursor,schema)
 
-        # print("Tables are Listed Below:")
-        # print(tables)
+        print("Tables are Listed Below:")
+        print(tables)
         # print()
         # print(tNo)
         # print()
@@ -97,12 +87,8 @@ def main(dbName, schema, mongodb_host, mongodb_dbname, file_paths):
         # print()
 
         
-
         # # Embedding and Linking
         data = embedAndLinking(cursor, schema, tables, tNo, relax, pks, work, adj2, relations)
-
-        for t in tables:
-            pre_process(cursor,data[tNo[t]],schema,t)
 
         # # Data Migration
         migrateAll( mongodb_dbname,myClient, schema, cursor, data, tNo, currCollec)

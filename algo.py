@@ -159,8 +159,8 @@ def algo(tables,tNo,relations,paths):
             else:
                 work[i][j]=work1[i][j]
                 
-    # for x in work:
-    #     print(x)
+    for x in work:
+        print(x)
 
     relax = getOrder(tables, work)
 

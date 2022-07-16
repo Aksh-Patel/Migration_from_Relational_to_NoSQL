@@ -36,8 +36,8 @@ def migrate_table(mongodbname,myClient, cursor, data, table_name, table_schema):
 
     pre_process(cursor, data, table_schema, table_name)
 
-    mydb = myClient[mongodbname]
-    mycol = mydb[table_name]
+    mydb = myClient[mongodbname]    # creates mongodb database if not created
+    mycol = mydb[table_name]        # creates new collection
 
     mycol.delete_many({})    # delete existing documents
 
@@ -54,10 +54,8 @@ def migrateAll(mongodbname,myClient, schema, cursor, data, tNo, currCollec):
     for c in currCollec:
         try:
             print(f"{bcolors.OKCYAN}Processing table: {c}...{bcolors.ENDC}")
-            inserted_count = migrate_table(
-                mongodbname,myClient, cursor, data[tNo[c]], c, schema)
-            print(
-                f"{bcolors.OKGREEN}Processing table: {c} completed. {inserted_count} documents inserted.{bcolors.ENDC}")
+            inserted_count = migrate_table(mongodbname, myClient, cursor, data[tNo[c]], c, schema)
+            print(f"{bcolors.OKGREEN}Processing table: {c} completed. {inserted_count} documents inserted.{bcolors.ENDC}")
             success_count += 1
         except Exception as e:
             print(f"{bcolors.FAIL} {e} {bcolors.ENDC}")

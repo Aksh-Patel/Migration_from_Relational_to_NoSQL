@@ -6,7 +6,7 @@
   
 # How it Works?
 Example Database [Entertainment Booking System]<br>
-We have 7 table in SQL Schema.<br>
+We have 5 tables in ER Diagram.<br>
 # Schema Diagram
 ![image](https://user-images.githubusercontent.com/58646076/180844328-276d62cb-4892-4ba2-ad73-f27023bf9d3c.png)
 

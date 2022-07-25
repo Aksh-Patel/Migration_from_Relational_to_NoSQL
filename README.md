@@ -1,7 +1,7 @@
 # Migration_from_Relational_to_NoSQL
-Core Idea:
-<li> In this project,Then we designed our own algorithm for migration which we have implemented as a web application which takes postgres schema, mongodb connection string and access paths as input and create mongodb collections as output. 
-<li>It performs schema extraction, then runs algorithm and from the results, it performs embedding and linking between collections and finally populate mongodb collections.
+<b> Core Idea:</b>
+<li> In this project, we have designed our own algorithm for migration which we have implemented as a web application which takes postgres schema, mongodb connection string and access paths as input and create mongodb collections as output. 
+<li> It performs schema extraction, then runs our algorithm and from the results, it performs embedding and linking between collections and finally populate mongodb collections.
 <li> We had created a small frotend using PyWebio which takes necessary input and shows success or Failed message.<br>
   
 # How it Works?

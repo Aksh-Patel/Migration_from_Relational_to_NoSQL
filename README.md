@@ -18,7 +18,7 @@ Example of Acesss path for our Entertainment Booking System:
 ![image](https://user-images.githubusercontent.com/58646076/180844684-d7273795-0860-4b5d-b3d6-ea23583db115.png)
 
 Processing of the Algorithm
-![image](https://user-images.githubusercontent.com/58646076/180844817-f21e5f7c-ff70-4e15-8902-4cfc6f6be6fc.png)
+![image](https://user-images.githubusercontent.com/58646076/180845088-cfd08890-987c-4f1d-b85f-140732292ce2.png)
 
 Migration Done Sucessfully
 ![image](https://user-images.githubusercontent.com/58646076/180844885-d83e7c6c-7016-4945-8e00-ef6fda587c89.png)

@@ -37,7 +37,7 @@ def home_page():
     if(isSuccessful==-1):
           pwo.clear()
           pwo.popup('Error','There is an error.')
-          img=open("something-went-wrong_f.gif",'rb').read()
+          img=open("error.gif",'rb').read()
           pwo.put_image(img)
           pwo.put_html('<h3></h3><br><br>')
           pwo.put_button('Migrate Another',onclick=home_page)

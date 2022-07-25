@@ -182,7 +182,7 @@ def linkManyToMany(data1, data2, datagum, pk1, pk2, pkgum, t1Name, t2Name, tbNam
                 for i in range(len(refersvia1)) :
                     row1[pk1[i]].append(row[refersvia1[i]])    
     return [data1, data2]
-        
+
 
 
 # function for single linking        

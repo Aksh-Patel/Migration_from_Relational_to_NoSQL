@@ -1,7 +1,9 @@
 # Migration_from_Relational_to_NoSQL
 Core Idea:
-In this project, we have made an application which takes name and access path as input and can get mongoDB collections as an atlas in mongoDB compass. The algorithm can extract all the needed schema information such as fetch tables, primary key, referred table,reference table etc for given schema. After schema extraction, algorithm will embed or the bases of set of rules. After migration completed, collections are populated in mongoDB compass.<br>
-
+<li> In this project,Then we designed our own algorithm for migration which we have implemented as a web application which takes postgres schema, mongodb connection string and access paths as input and create mongodb collections as output. 
+<li>It performs schema extraction, then runs algorithm and from the results, it performs embedding and linking between collections and finally populate mongodb collections.
+<li> We had created a small frotend using PyWebio which takes necessary input and shows success or Failed message.<br>
+  
 # How it Works?
 Example Database [Entertainment Booking System]<br>
 We have 7 table in SQL Schema.<br>

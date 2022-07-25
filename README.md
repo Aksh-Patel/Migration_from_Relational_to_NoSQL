@@ -4,13 +4,13 @@
 <li> It performs schema extraction, then runs our algorithm and from the results, it performs embedding and linking between collections and finally populate mongodb collections.
 <li> We had created a small frotend using PyWebio which takes necessary input and shows success or Failed message.<br>
   
-# How it Works?
+# # How it Works?
 Example Database [Entertainment Booking System]<br>
 We have 5 tables in ER Diagram.<br>
 # Schema Diagram
 ![image](https://user-images.githubusercontent.com/58646076/180844328-276d62cb-4892-4ba2-ad73-f27023bf9d3c.png)
 
-# HomePage of the Application:
+# # HomePage of the Application:
 ![image](https://user-images.githubusercontent.com/58646076/180844473-22f60a3c-25f7-4b28-aaba-1ea12c8c6e19.png)
 
 Note: Access path is a text file, which is given to the input to prioritized some collections which are frequently queried out. The migration Algorithm takes care about these access paths.<br>
